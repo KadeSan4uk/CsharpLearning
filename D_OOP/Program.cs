@@ -4,6 +4,85 @@
     {
         static void Main(string[] args)
         {
+            
+        }
+        static void PassByRefDemo()
+        {
+            int a = 1;
+            int b = 2;
+
+            Swap(ref a, ref b);
+            Console.WriteLine($" a={a} b={b}");
+
+
+
+            Console.ReadLine();
+
+            var list = new List<int>();
+            AddNumbers(list);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+        static void Swap(ref int  a,ref int b)
+        {
+            Console.WriteLine($"Original a={a} b={b}");
+            int temp = a; a=b; b=temp;
+            Console.WriteLine($"Swapped a={a} b={b}");
+
+        }
+        static void AddNumbers(List<int> numbers)
+        {
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
+        }
+        
+        static void ValueRefTypes()
+        {
+            EvilStruct es1 = new EvilStruct();
+            es1.PointRef = new PointRef() { X = 1, Y = 2 };
+            //es1.PointRef.X = 1;
+            //es1.PointRef.Y = 2;
+            EvilStruct es2 = es1;
+            Console.WriteLine($"es1.PointRef.X= {es1.PointRef.X} es1.PoitRef.Y= {es1.PointRef.Y}");
+            Console.WriteLine($"es1.PointRef.X= {es2.PointRef.X} es1.PoitRef.Y= {es2.PointRef.Y}");
+
+            es2.PointRef.X = 42;
+            es2.PointRef.Y = 45;
+            Console.WriteLine($"es1.PointRef.X= {es1.PointRef.X} es1.PoitRef.Y= {es1.PointRef.Y}");
+            Console.WriteLine($"es1.PointRef.X= {es2.PointRef.X} es1.PoitRef.Y= {es2.PointRef.Y}");
+
+
+            Console.ReadLine();
+            PointVal a; //тоже самое PointVal a = new PointVal();
+            a.X = 3;
+            a.Y = 5;
+
+            PointVal b = a;
+            b.X = 7;
+            b.Y = 10;
+
+            a.LogValues();
+            b.LogValues();
+            Console.WriteLine("After strucs");
+
+            PointRef c = new PointRef(); //с сылочными типами только так 
+            c.X = 3;
+            c.Y = 5;
+
+            PointRef d = c;
+            d.X = 7;
+            d.Y = 10;
+
+            c.LogValues();
+            d.LogValues();
+        }
+        static void SpeedControl()
+        {
             Character c1 = new Character();
             Character c2 = new Character();
 
