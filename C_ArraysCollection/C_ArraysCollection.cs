@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Channels;
 using System.Collections.Generic;
 
 namespace C_ArraysCollection
@@ -10,7 +11,7 @@ namespace C_ArraysCollection
     {
         private static Dictionary<char, int> map = new Dictionary<char, int>()
         {
-            {'I',1 },
+            {'I',1 }, 
             { 'V',5},
             { 'X',10},
             { 'L',50},

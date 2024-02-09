@@ -7,7 +7,7 @@ namespace B_ControlFlow
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine();
         }
         
         static void LoginPassword()
