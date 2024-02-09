@@ -1,5 +1,4 @@
-﻿using D_OOP;
-using System;
+﻿using System;
 using System.Text;
 using System.Threading.Channels;
 using System.Reflection.Metadata.Ecma335;
@@ -10,7 +9,7 @@ namespace CsharpLearning
     {
         static void Main(string[] args)
         {
-           
+            
         }
         static void SomeTasks()
         {
