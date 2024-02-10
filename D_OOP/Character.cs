@@ -6,13 +6,38 @@ using System.Collections.Generic;
 
 namespace D_OOP
 {
+    public class Poit2D
+    {
+        private int x;
+        private int y;
+
+        public Poit2D(int x, int y)
+        {
+            this.x = x;
+        }
+    }
+
     public class Character
     {
-        //protected || член класса недоступен из вне, доступен в классах Наследниках
-        //internal  || используется только в той сборке в которой обьявлены
-        //private   || доступен только в классе 
-        //public    || доступен везде
-        public static int speed = 10;
+
+       // public static int speed = 10;
+        //public const int speed = 10;//неизменяемый тип значения
+        public readonly int speed;//можно инициализировать как =10; или потом в конструкторе
+
+        public int Health { get; set; } = 100;
+
+        public string Race { get; private set; }
+
+        public int Armor{get; private set;}
+
+        
+        public Character(string race, int armor, int speed)
+        {//конструктор класса (ctor) можно задать требуемые аргументы для защиты класса из вне
+            Race = race;
+            Armor = 30;
+            this.speed = speed;
+        }
+
 
         public int PrintSpeed()
         {
@@ -20,11 +45,16 @@ namespace D_OOP
         }
         public void IncreaseSpeed()
         {
-            speed += 10;
+           // speed += 10;
         }
 
+        
 
 
+        //protected || член класса недоступен из вне, доступен в классах Наследниках
+        //internal  || используется только в той сборке в которой обьявлены
+        //private   || доступен только в классе 
+        //public    || доступен везде
 
 
 

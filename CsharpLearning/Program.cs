@@ -10,7 +10,9 @@ namespace CsharpLearning
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
+            
+
+            
         }
         static void SomeTasks()
         {
