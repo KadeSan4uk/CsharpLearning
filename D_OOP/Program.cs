@@ -5,6 +5,73 @@
         static void Main(string[] args)
         {
             
+            ModelXTerminal terminal =new ModelXTerminal("123");
+            terminal.Connect(); 
+
+
+            Console.ReadLine();
+             
+
+        }
+        static void BoxingUnboxing()
+        {
+            //Character c = new Character("Elf");// требуемый аргемент Elf
+            //Console.WriteLine(c.Race);
+
+
+            //int x = 1;
+            //object obj = x;//boxing упаковка
+
+            //int y = (int) obj;//unboxing распаковка
+
+            double pi = 3.14;
+            object obj1 = pi;
+            int number = (int) (double) obj1;// если приведение типа дает исключение можно попробовать добавить другой тип например (double)
+            Console.WriteLine(number);
+        }
+        static void DoSmthQuestions(object obj)
+        {
+            bool isPointRef=obj is PointRef;//is проверка на содержимое object
+            if(isPointRef)
+            {
+                PointRef pr= (PointRef)obj;
+                Console.WriteLine(pr.X);
+            }
+            else
+            {
+                //do smth...
+            }
+
+            PointRef pr1 = obj as PointRef;// as проверка содержит ли jbject *PointRef* если нет тогда jbj=null
+
+            if(pr1 != null)
+            {
+                Console.WriteLine(pr1.X);
+            }
+            else
+            {
+                // обычно else но если есть в него можно вписать исключение
+            } 
+           
+        }
+        static void NRE_NullableValTypesDemo()
+        {
+            PointVal? pv = null;
+            if (pv.HasValue)
+            {
+                PointVal pv2 = pv.Value;
+                Console.WriteLine(pv.Value.X);
+                Console.WriteLine(pv2.X);
+            }
+            else
+            {
+
+            }
+
+            PointVal pv3 = pv.GetValueOrDefault();
+
+            PointRef c = null;
+            Console.WriteLine(c.X);//NullReferensException
         }
         static void PassByRefDemo()
         {
@@ -44,7 +111,7 @@
         static void ValueRefTypes()
         {
             EvilStruct es1 = new EvilStruct();
-            es1.PointRef = new PointRef() { X = 1, Y = 2 };
+            //PointRef = new PointRef() { X = 1, Y = 2 };
             //es1.PointRef.X = 1;
             //es1.PointRef.Y = 2;
             EvilStruct es2 = es1;
@@ -83,15 +150,15 @@
         }
         static void SpeedControl()
         {
-            Character c1 = new Character();
-            Character c2 = new Character();
+            //Character c1 = new Character("Elf");
+            //Character c2 = new Character("Elf");
 
-            Console.WriteLine($"c1Speed={c1.PrintSpeed()} c2Speed={c2.PrintSpeed()}");
-            c1.IncreaseSpeed();
-            Console.WriteLine($"c1Speed={c1.PrintSpeed()} c2Speed={c2.PrintSpeed()}");
+            //Console.WriteLine($"c1Speed={c1.PrintSpeed()} c2Speed={c2.PrintSpeed()}");
+            //c1.IncreaseSpeed();
+            //Console.WriteLine($"c1Speed={c1.PrintSpeed()} c2Speed={c2.PrintSpeed()}");
 
-            double result = Calculator.Average2(1, 2, 3);
-            Console.WriteLine(result);
+            //double result = Calculator.Average2(1, 2, 3);
+            //Console.WriteLine(result);
 
         }
         static void TryParseMethod()
