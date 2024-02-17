@@ -4,6 +4,12 @@
     {
         static void Main(string[] args)
         {
+
+
+
+        }
+        static void PolimorfismDemo()
+        {
             Shape[] shapes = new Shape[2];
             shapes[0] = new Triangle(10, 20, 30);
             shapes[1] = new Rectangle(5, 10);
@@ -22,8 +28,6 @@
 
 
             //Console.ReadLine();
-             
-
         }
         static void BoxingUnboxing()
         {
