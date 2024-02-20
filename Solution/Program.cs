@@ -11,13 +11,7 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            string str = "";
-
-
-            
-            
-
-
+           
         }
         
         static void stringWithOut0_9()
