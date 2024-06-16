@@ -1,9 +1,216 @@
 ﻿using System;
+using System.Xml.Linq;
+using System.Runtime.ConstrainedExecution;
 
 public class Program
 {
     private static void Main(string[] args)
     {
+
+
+
+
+    }
+
+    public void InheritenceAndPolimorfism()
+    {
+        //Наследование позволяет одному классу (производному) унаследовать поля,
+        //свойства и методы другого класса (базового).
+
+        //    public class Animal
+        // {
+        //    public string Name { get; set; }
+
+        //    public void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} is eating.");
+        //    }
+        // }
+        //    public class Dog : Animal
+        // {
+        //    public void Bark()
+        //    {
+        //        Console.WriteLine($"{Name} is barking.");
+        //    }
+        //  }
+        //Dog dog = new Dog();
+        //dog.Name = "Buddy";
+        //dog.Eat(); // выводит "Buddy is eating."
+        //dog.Bark(); // выводит "Buddy is barking."
+
+        //Переопределение позволяет производному классу предоставлять специфическую реализацию метода,
+        //который уже определен в базовом классе.Для этого используются ключевые слова virtual и override.
+
+        //    public class Animal
+        // {
+        //    public string Name { get; set; }
+
+        //    public virtual void MakeSound()
+        //    {
+        //        Console.WriteLine($"{Name} makes a sound.");
+        //    }
+        // }
+
+        //    public class Dog : Animal
+        // {
+        //    public override void MakeSound()
+        //    {
+        //        Console.WriteLine($"{Name} barks.");
+        //    }
+        // }
+        //Animal animal = new Animal();
+        //animal.Name = "Generic Animal";
+        //animal.MakeSound(); // выводит "Generic Animal makes a sound."
+
+        //Dog dog = new Dog();
+        //dog.Name = "Buddy";
+        //dog.MakeSound(); // выводит "Buddy barks."
+
+        // Виртуальные методы могут быть переопределены в производных классах,
+        // но имеют реализацию по умолчанию в базовом классе.
+        // Абстрактные методы не имеют реализации в базовом классе и должны быть
+        // реализованы в производных классах.Абстрактный метод может быть объявлен только в абстрактном классе.
+
+        //    public abstract class Animal
+        //  {
+        //    public string Name { get; set; }
+
+        //    public abstract void MakeSound();
+
+        //    public virtual void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} is eating.");
+        //    }
+        //  }
+
+        //    public class Dog : Animal
+        //  {
+        //    public override void MakeSound()
+        //    {
+        //        Console.WriteLine($"{Name} barks.");
+        //    }
+
+        //    public override void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} eats dog food.");
+        //    }
+        //  }
+        //Dog dog = new Dog();
+        //dog.Name = "Buddy";
+        //dog.MakeSound(); // выводит "Buddy barks."
+        //dog.Eat(); // выводит "Buddy eats dog food."
+
+        //Интерфейсы определяют набор методов и свойств, которые класс должен реализовать,
+        //но не содержат реализаций. Класс может реализовывать несколько интерфейсов,
+        //что обеспечивает гибкость и поддержку множественного наследования поведения.
+
+        //    public interface IMovable
+        //  {
+        //    void Move();
+        //  }
+
+        //    public class Car : IMovable
+        //  {
+        //    public void Move()
+        //    {
+        //        Console.WriteLine("The car is moving.");
+        //    }
+        //  }
+        //IMovable movable = new Car();
+        //movable.Move(); // выводит "The car is moving."
+
+        // Пример с наследованием, полиморфизмом и интерфейсами
+
+        // Базовый класс
+
+        //    public abstract class Animal
+        //  {
+        //    public string Name { get; set; }
+
+        //    public abstract void MakeSound();
+
+        //    public virtual void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} is eating.");
+        //    }
+        //  }
+
+        //Производные классы
+
+        //    public class Dog : Animal
+        //  {
+        //    public override void MakeSound()
+        //    {
+        //        Console.WriteLine($"{Name} barks.");
+        //    }
+
+        //    public override void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} eats dog food.");
+        //    }
+        //  }
+
+        //public class Cat : Animal
+        //  {
+        //    public override void MakeSound()
+        //    {
+        //        Console.WriteLine($"{Name} meows.");
+        //    }
+
+        //    public override void Eat()
+        //    {
+        //        Console.WriteLine($"{Name} eats cat food.");
+        //    }
+        //  }
+
+        //Интерфейс
+
+        //    public interface IMovable
+        //  {
+        //    void Move();
+        //  }
+
+        //класс реализующий интерфейс
+
+        //    public class Car : IMovable
+        //  {
+        //    public void Move()
+        //    {
+        //        Console.WriteLine("The car is moving.");
+        //    }
+        //  }
+
+        //Использование полиморфизма и интерфейсов
+
+        //   List<Animal> animals = new List<Animal>
+        //  {
+        //    new Dog { Name = "Buddy" },
+        //    new Cat { Name = "Whiskers" }
+        //  };
+
+        //    foreach (var animal in animals)
+        //   {
+        //      animal.MakeSound();
+        //      animal.Eat();
+        //   }
+
+        //    IMovable movable = new Car();
+        //    movable.Move();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -154,7 +361,6 @@ public class Program
         //Console.WriteLine(account.Balance); // выводит 1300
 
     }
-
 
     public void Methods()
     {
