@@ -12,6 +12,84 @@ public class Program
 
     }
 
+    public void DelegatsAndEvents()
+    {
+        //Делегаты в C# представляют собой тип, который представляет ссылку на метод.
+        //Они используются для создания и хранения ссылок на методы и позволяют передавать метод
+        //как параметр другому методу или вызывать его асинхронно.
+
+        //Обьявлние делегата
+
+        // public delegate void MyDelegate(string message);
+
+        //использование для вызова метода
+        //    public class MyClass
+        //  {
+        //    public void MethodA(string message)
+        //    {
+        //        Console.WriteLine($"MethodA called with message: {message}");
+        //    }
+        //  }
+
+        //MyClass obj = new MyClass();
+        //MyDelegate del = obj.MethodA;
+        //del("Hello, delegates!"); // вызов метода через делегат
+
+        //События позволяют объектам уведомлять другие объекты о произошедших событиях.
+        //Они основаны на делегатах и представляют собой механизм, который позволяет
+        //одним объектам подписываться на уведомления и реагировать на них.
+
+        //Обьявление и использование события
+        //        public class Publisher
+        //    {
+        //        public event MyDelegate SomeEvent; // объявление события
+
+        //        public void RaiseEvent(string message)
+        //        {
+        //            SomeEvent?.Invoke(message); // вызов события
+        //        }
+        //    }
+
+        //    public class Subscriber
+        //    {
+        //        public void Subscribe(Publisher pub)
+        //        {
+        //            pub.SomeEvent += HandleEvent; // подписка на событие
+        //        }
+
+        //        public void HandleEvent(string message)
+        //        {
+        //            Console.WriteLine($"Event handled with message: {message}");
+        //        }
+        //    }
+
+        //    Publisher publisher = new Publisher();
+        //    Subscriber subscriber = new Subscriber();
+
+        //    subscriber.Subscribe(publisher); // подписка на событие
+
+        //    publisher.RaiseEvent("Hello, events!"); // вызов события, вызовет HandleEvent у подписчика
+
+        //Лямбда - выражения представляют анонимные методы, которые позволяют компактно определять функциональность,
+        //обычно в контексте передачи делегатов или работы с LINQ.
+
+        //MyDelegate del = (string message) => Console.WriteLine($"Lambda expression called with message: {message}");
+        //del("Hello, lambda!"); // вызов лямбда-выражения
+
+        //Гибкость и расширяемость: Делегаты позволяют передавать методы как параметры,
+        //что упрощает создание более гибкого кода.
+
+        //Отделение обязанностей: События позволяют классам взаимодействовать
+        //без необходимости знать друг о друге напрямую.
+
+        //Компактность кода: Лямбда - выражения позволяют писать более компактный и выразительный код.
+
+
+
+
+
+    }
+
     public void Collections()
     {
         //Массивы в C# представляют собой фиксированное количество элементов одного типа данных
@@ -283,6 +361,7 @@ public class Program
 
 
     }
+
     public void ClassesAndObjects()
     {
         //Создание и использование классов
