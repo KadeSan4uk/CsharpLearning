@@ -12,6 +12,73 @@ public class Program
 
     }
 
+    public void Collections()
+    {
+        //Массивы в C# представляют собой фиксированное количество элементов одного типа данных
+
+        int[] numbers = new int[5]; // массив из 5 элементов типа int
+
+        int[] numbers1 = { 1, 2, 3, 4, 5 };// инициализация при обьявлении
+
+        Console.WriteLine(numbers[0]); // выводит первый элемент массива (1)
+
+        numbers[2] = 10; // изменяет третий элемент на 10
+
+        Console.WriteLine(numbers.Length); // выводит длину массива (5)
+
+        //Списки List<T> в C# представляют собой динамический массив,
+        //который может изменять свой размер во время выполнения.
+
+        List<int> numbersList = new List<int>(); // пустой список типа int
+
+        numbersList.Add(1);//Добавление в значения в список
+        numbersList.Add(2);
+        numbersList.Add(3);
+
+        Console.WriteLine(numbersList[0]); // выводит первый элемент списка (1)
+
+        numbersList[2] = 10; // изменяет третий элемент списка на 10
+
+        Console.WriteLine(numbersList.Count); // выводит количество элементов в списке (3)
+
+        //Dictionary <TKey, TValue> представляет коллекцию пар ключ-значение, где каждый ключ уникален.
+
+        Dictionary<string, int> ages = new Dictionary<string, int>();
+        ages.Add("Alice", 30);
+        ages.Add("Bob", 25);
+        ages.Add("Charlie", 35);
+
+        Console.WriteLine(ages["Alice"]); // выводит значение по ключу "Alice" (30)
+
+        if (ages.ContainsKey("Bob"))
+        {
+            Console.WriteLine("Bob's age is " + ages["Bob"]);
+        }
+
+        //Queue<T> представляет коллекцию элементов по принципу "первый пришел, первый вышел" (FIFO).
+
+        Queue<string> queue = new Queue<string>();
+        queue.Enqueue("Alice");
+        queue.Enqueue("Bob");
+
+        string firstPerson = queue.Dequeue(); // извлекаем первый элемент ("Alice")
+        Console.WriteLine("First person: " + firstPerson); // выводит "First person: Alice"
+
+        //Stack<T> представляет коллекцию элементов по принципу "последний пришел, первый вышел" (LIFO).
+
+        Stack<string> stack = new Stack<string>();
+        stack.Push("Alice");
+        stack.Push("Bob");
+
+        string topPerson = stack.Pop(); // извлекаем верхний элемент ("Bob")
+        Console.WriteLine("Top person: " + topPerson); // выводит "Top person: Bob"
+
+
+
+
+
+    }
+
     public void InheritenceAndPolimorfism()
     {
         //Наследование позволяет одному классу (производному) унаследовать поля,
